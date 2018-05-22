@@ -53,6 +53,14 @@ services:
       - PERSEO_MONGO_ENDPOINT=mongodb-perseo
       - PERSEO_CORE_URL=http://perseo-core:8080
       - PERSEO_ORION_URL=http://orion:1026/v1/updateContext
+  influxdb:
+    image: influxdb
+    volumes:
+    - /var/lib/influxdb
+    ports:
+    - 8086:8086/tcp
+    environment:
+    - INFLUXDB_DB=masterUC
 
 
 

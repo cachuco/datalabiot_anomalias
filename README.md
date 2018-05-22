@@ -1,4 +1,5 @@
-# Master Datalab IoT
+# Master Datalab IoT - Detección de anomalías en tiempo real
+
 Juan José Cacho
 Universidad de Cantabria (Mayo de 2018)
 
@@ -12,6 +13,8 @@ La plataforma contiene los siguientes componentes principales:
 - **[Fiware/Orion](https://fiware-orion.readthedocs.io/en/master/)** Context Broker
 - **[Fiware/Perseo](http://fiware-iot-stack.readthedocs.io/en/latest/cep/)** Perseo-fe como Context Event Processing y Perseo-Core con el servidor de procesos ETL
 - **[NodeRed](https://nodered.org/)** Desarrollo rápido de agentes para tareas de ETL (Extract Transform Load)
+- **[NodeRed Dashboard](https://github.com/node-red/node-red-dashboard)** Dashboard de viasualización
+- **[InfluxDb](https://www.influxdata.com/)** Base de datos especializada en series de tiempo
 
 ## Requisitos
 
@@ -131,20 +134,19 @@ EOF
 ```
 
 
-Mapa de puertos y servicios de la máquina virtual generada
+### Mapa de puertos y servicios de la máquina virtual generada
 
 - **NodeRed**  1880
 - **Orion** 1026
 - **Perseo** 9090
 - **Perseo core** 8080
+- **InfluxDb** 8086
 
-Las URL's públicas de acceso son:
+### Las URL's públicas de acceso son:
 
 - **Nodered** http://localhost:1880
 - **Nodered dashboard** http://localhost:1880/ui/
-- **Websocket de alarmas** ws://localhost:1880/api/alarm
 - **Orion** http://localhost:1026/
-- **Ver reglas creadas** http://localhost:9090/rules
 - **Métricas CEP** http://localhost:9090/admin/metrics
 
 

@@ -46,6 +46,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 1880, host: 1880 # nodered
   config.vm.network "forwarded_port", guest: 8080, host: 8080 # perseo-core
   config.vm.network "forwarded_port", guest: 9090, host: 9090 # perseo-fe
+  config.vm.network "forwarded_port", guest: 8086, host: 8086 # influxdb
   
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
