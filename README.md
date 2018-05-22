@@ -81,15 +81,18 @@ EOF
             "url": "http://nodered:1880/api/alarm",
             "method": "POST",
             "headers": {
-				"Content-type": "application/json"
-			},
-			"qs": {
-				"${id}": "${id}",
-				"${temperature}": "${temperature}"
-			},
-			"json": {
-				"temperature": "${temperature}"
-			}
+                "Content-type": "application/json"
+            },
+            "qs": {
+                "${id}": "${id}",
+                "${temperature}": "${temperature}"
+            },
+            "json": {
+                "temperature": "${temperature}",
+                "humidity": "${humidity}",
+                "pressure": "${pressure}",
+                "id": "${id}"
+            }
         }
     }
 }
