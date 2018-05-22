@@ -1,0 +1,62 @@
+version: '2'
+services:
+  nodered:
+    build: nodered
+    ports:
+    - 1880:1880/tcp
+  mongodb:
+    image: mongo:3.4
+    command: --nojournal
+  orion:
+    image: fiware/orion
+    hostname: orion
+    container_name: orion
+    links:
+      - mongodb
+    expose:
+      - "1026"
+    ports:
+      - "1026:1026"
+    command: -dbhost mongodb
+  perseo-core:
+    image: telefonicaiot/perseo-core
+    hostname: perseo-core
+    container_name: perseo-core
+    volumes:
+      - ./perseo/perseo-core.properties:/etc/perseo-core.properties
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+  mongodb-perseo:
+    image: mongo:3.4
+    hostname: mongodb-perseo
+    container_name: mongodb-perseo
+    expose:
+    - "27017"
+    ports:
+    - "27017:27017"
+    command: --smallfiles --nojournal
+  perseo:
+    image: telefonicaiot/perseo-fe
+    hostname: perseo
+    container_name: perseo
+    links:
+      - mongodb-perseo
+      - perseo-core
+      - orion
+    expose:
+      - "9090"
+    ports:
+      - "9090:9090"
+    environment:
+      - PERSEO_MONGO_ENDPOINT=mongodb-perseo
+      - PERSEO_CORE_URL=http://perseo-core:8080
+      - PERSEO_ORION_URL=http://orion:1026/v1/updateContext
+
+
+
+
+
+
+
