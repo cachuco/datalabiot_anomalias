@@ -15,6 +15,7 @@ La plataforma contiene los siguientes componentes principales:
 - **[NodeRed](https://nodered.org/)** Desarrollo rápido de agentes para tareas de ETL (Extract Transform Load)
 - **[NodeRed Dashboard](https://github.com/node-red/node-red-dashboard)** Dashboard de viasualización
 - **[InfluxDb](https://www.influxdata.com/)** Base de datos especializada en series de tiempo
+- **[Grafana](https://grafana.com/)** Análitica avanzada de datos históricos
 
 ## Requisitos
 
@@ -144,6 +145,7 @@ EOF
 - **Perseo** 9090
 - **Perseo core** 8080
 - **InfluxDb** 8086
+- **Grafana** 3000
 
 ### Las URL's públicas de acceso son:
 

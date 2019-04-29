@@ -61,6 +61,12 @@ services:
     - 8086:8086/tcp
     environment:
     - INFLUXDB_DB=masterUC
+  grafana:
+    build: ./grafana
+    ports:
+    - 3000:3000/tcp
+    environment:
+    - GF_INSTALL_PLUGINS=grafana-piechart-panel,grafana-worldmap-panel
 
 
 
