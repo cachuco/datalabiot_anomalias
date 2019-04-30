@@ -62,15 +62,12 @@ services:
     environment:
     - INFLUXDB_DB=masterUC
   grafana:
-    build: ./grafana
+    image: grafana/grafana
+    links:
+    - influxdb
+    depends_on:
+    - influxdb
     ports:
     - 3000:3000/tcp
     environment:
     - GF_INSTALL_PLUGINS=grafana-piechart-panel,grafana-worldmap-panel
-
-
-
-
-
-
-
