@@ -24,7 +24,7 @@ Se requiere tener instalado [Vagrant](https://www.vagrantup.com/downloads.html) 
 ## Despliegue
 
 ```shell
-git clone https://github.com/cachuco/datalabiot
+git clone https://github.com/cachuco/datalabiot_anomalias
 cd datalabiot
 vagrant up
 ```
