@@ -19,7 +19,7 @@ La plataforma contiene los siguientes componentes principales:
 
 ## Requisitos
 
-Se requiere tener instalado [Vagrant](https://www.vagrantup.com/downloads.html) y un cliente git.
+Se requiere tener instalado [Vagrant](https://www.vagrantup.com/downloads.html), VirtualBox y un cliente git.
 
 ## Despliegue
 
