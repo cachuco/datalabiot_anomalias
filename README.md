@@ -42,6 +42,12 @@ cd /docker
 sudo docker-compose up
 ```
 
+Para eliminar la máquina virtual
+
+```
+vagrant destroy -f
+```
+
 ### Crear suscripción ORION (CB) -> PERSEO (CEP)
 ```
 (curl http://localhost:1026/v1/subscribeContext -s -S --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Fiware-Service: service' –header 'Fiware-ServicePath: subservice' -d @- | python -mjson.tool) <<EOF
